@@ -115,7 +115,7 @@ else return "no";
 
 ## NFA to DFA
 
--Subset Construction
+- Subset Construction
 
 ```c
 add ϵ-closure(s0) as an unmarked state to Dstates;
