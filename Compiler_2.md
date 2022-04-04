@@ -148,8 +148,8 @@ A grammar $G$ is $LL(1)$ iff whenever $A \to \alpha | \beta$ are tow distince pr
 For each production A -> α, to the following:
 1. For each α ∈ FIRST(α), add A -> α to M[A, α]
 2. If ϵ ∈ FIRST(α), then
-    - for each b ∈ FOLLOW(A), add A -> α to M[A, α]
-    - if $ ∈ FOLLOW(A), add A -> α to M[A, α]
+    - for each b ∈ FOLLOW(A), add A -> α to M[A, b]
+    - if $ ∈ FOLLOW(A), add A -> α to M[A, $]
 Set M[A, α] to error if M[A, α] is an empty entry
 ```
 
