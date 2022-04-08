@@ -46,7 +46,7 @@ $A \to A \alpha_1 | A \alpha_2 | \dots | A \alpha_m | \beta_1 | \beta_2 | \dots 
 
 to
 
-$A \to \beta_1 A' | \beta_2 A' | dots | \beta_n A'$
+$A \to \beta_1 A' | \beta_2 A' | \dots | \beta_n A'$
 
 $A' \to \alpha_1 A' | \alpha_2 A' | \dots | \alpha_m A' | \epsilon$
 
