@@ -73,7 +73,7 @@ $A \to \alpha \beta_1 | \alpha \beta_2 | \dots | \alpha \beta_n | \gamma$
 
 to
 
-$A \to \alpha A' | \gamma, A' \to \beta_1 | dots | \beta_n$
+$A \to \alpha A' | \gamma, A' \to \beta_1 | \dots | \beta_n$
 
 # Parser
 
