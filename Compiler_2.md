@@ -113,7 +113,7 @@ $A \to \alpha A' | \gamma, A' \to \beta_1 | \dots | \beta_n$
 - $A$ is a nonterminal
 - The set of terminals $a$ (no $\epsilon$) that can appear immediately to the right of $A$ in some sentential form
     - If $S \Rightarrow \alpha A a \beta$, then $a \in FOLLOW(A)$
-    - If $A$ can be rightmost symbol insome sentential form, then $\$ \in FOLLOW(A)$
+    - If $A$ can be rightmost symbol in some sentential form, then $\$ \in FOLLOW(A)$
 
 #### Compute $FIRST(X)$
 
@@ -140,7 +140,7 @@ $A \to \alpha A' | \gamma, A' \to \beta_1 | \dots | \beta_n$
 
 #### LL(1)
 
-A grammar $G$ is $LL(1)$ iff whenever $A \to \alpha | \beta$ are tow distince productions of $G$ and $FIRST(\alpha) \cap FIRST(\beta) = \emptyset$; if $\epsilon \in FIRST(\beta)$, then $FIRST(\alpha) \cap FOLLOW(A) = \emptyset$
+A grammar $G$ is $LL(1)$ iff whenever $A \to \alpha | \beta$ are two distince productions of $G$ and $FIRST(\alpha) \cap FIRST(\beta) = \emptyset$; if $\epsilon \in FIRST(\beta)$, then $FIRST(\alpha) \cap FOLLOW(A) = \emptyset$
 
 #### Predictive Parsing Table
 
@@ -153,9 +153,26 @@ For each production A -> α, to the following:
 Set M[A, α] to error if M[A, α] is an empty entry
 ```
 
+
 ### Nonrecursive Predictive Parsing
 
 - Using the parsing table and a stack.
+    - ip: point to first symbol of input string
+    - a: the symbol ip point to
+
+```
+push($);
+push(S);
+do {
+    X = pop();
+    if (X is a) advance ip;
+    else if (M[X, a] = X -> Y1 Y2 ... Yk) {
+        output the production X -> Y1 Y2 ... Yk;
+        push(Yk); ... push(Y2); push(Y1);
+    }
+    else error();
+} while (X != $)
+```
 
 
 ## Bottom-Up Parsing
