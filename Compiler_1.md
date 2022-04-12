@@ -127,7 +127,7 @@ while (there is an unmarked state T in Dstates) {
             add U as an unmarked state to Dstates;
             mark as final if U contains the original final state;
         }
-        Dtranp[T, a] = U;
+        Dtran[T, a] = U;
     }
 }
 ```    
@@ -141,6 +141,12 @@ while (there is an unmarked state T in Dstates) {
     - If for every input symbol $a$, tow states $s$ and $t$ in $G$ have transitions on $a$ to the same group, then $s$ and $t$ stay in the same group.
     - Otherwise, divide $G$ and put $s$ and $t$ to different groups.
 - Repeat the division, until no changes on grouping.
+
+## 證明兩個 regular expression 相同
+
+1. 用 Thrompson's construction algorithm 建 NFA
+2. 用 Subset construction algorithm 轉t成 DFA
+3. Minimize DFA states
 
 ## Ambiguity Resolution
 
